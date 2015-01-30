@@ -170,19 +170,6 @@ on boot
     chown radio system /sys/class/sec/sec_key/wakeup_keys
     write /sys/class/sec/sec_key/wakeup_keys 116,172
 
-# Permissions for EPEN
-    chown system system /sys/class/input/input8/enabled
-    chmod 0660 /sys/class/input/input8/enabled
-    chown system radio /sys/class/sec/sec_epen/epen_firm_update
-    chown system radio /sys/class/sec/sec_epen/epen_rotation
-    chown system radio /sys/class/sec/sec_epen/epen_hand
-    chown system radio /sys/class/sec/sec_epen/epen_reset
-    chown system radio /sys/class/sec/sec_epen/epen_reset_result
-    chown system radio /sys/class/sec/sec_epen/epen_checksum
-    chown system radio /sys/class/sec/sec_epen/epen_checksum_result
-    chown system radio /sys/class/sec/sec_epen/epen_saving_mode
-    chown system radio /sys/class/sec/sec_epen/epen_connection
-
 # SENSORS
 # Accelerometer_sensor
     chown system radio /sys/class/sensors/accelerometer_sensor/raw_data
@@ -537,7 +524,7 @@ on property:ro.securestorage.support=true
     mkdir /dev/.secure_storage
     chmod 0711 /dev/.secure_storage
     chown system system /dev/.secure_storage
-    restorecon -R /dev/.secure_storage
+    restorecon_recursive /dev/.secure_storage
     start secure_storage
 
 # CS service

@@ -41,6 +41,7 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 # Bootloader
 TARGET_OTA_ASSERT_DEVICE := v1awifi
+BLOCK_BASED_OTA := false
 
 # Camera
 # COMMON_GLOBAL_CFLAGS += -DUSE_MEMORY_HEAP_ION
@@ -134,19 +135,19 @@ BOARD_USES_SCALER := true
 BOARD_SEPOLICY_DIRS := \
     device/samsung/v1awifi/sepolicy
 
-BOARD_SEPOLICY_UNION := \
-    file_contexts \
-    genfs_contexts \
-    adbd.te \
-    app.te \
-    device.te \
-    domain.te \
-    gpsd.te \
-    file.te \
-    mediaserver.te \
-    surfaceflinger.te \
-    samsung_media.te \
-    system.te
+BOARD_SEPOLICY_UNION += \
+	file_contexts \
+	device.te \
+	domain.te \
+	drmserver.te \
+	file.te \
+	gpsd.te \
+	init.te \
+	mediaserver.te \
+	servicemanager.te \
+	system_app.te \
+	system_server.te \
+	wpa.te
 
 # SurfaceFlinger
 BOARD_USES_SYNC_MODE_FOR_MEDIA := true
