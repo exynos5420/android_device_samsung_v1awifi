@@ -23,12 +23,12 @@
 
     <bool name="config_deskDockEnablesAccelerometer">false</bool>
 
-     <!-- Default color for notification LED is white. -->
-    <!-- <color name="config_defaultNotificationColor">#ffffffff</color> -->
+    <!-- Default color for notification LED is white. -->
+    <color name="config_defaultNotificationColor">#ffffffff</color>
 
     <!-- Default value for led color when battery is medium charged -->
     <!-- The green LED is brighter than red, bias closer to yellow. -->
-    <!-- <integer name="config_notificationsBatteryMediumARGB">0xFFFF6000</integer> -->
+    <integer name="config_notificationsBatteryMediumARGB">0xFFFF6000</integer>
 
     <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
@@ -73,9 +73,9 @@
     <integer-array name="config_autoBrightnessButtonBacklightValues">
         <item>1</item>
         <item>1</item>
-        <item>1</item>
-        <item>1</item>
-        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
     </integer-array>
 
 
@@ -221,12 +221,12 @@
     <bool name="config_enableLockScreenRotation">false</bool>
 
     <!-- Indicate whether the SD card is accessible without removing the battery. -->
-    <bool name="config_batterySdCardAccessibility">true</bool>
+    <bool name="config_batterySdCardAccessibility">false</bool>
 
     <!-- Disable the home key unlock setting -->
     <!-- <bool name="config_disableHomeUnlockSetting">false</bool> -->
 
-    <!-- Hardware 'face' keys present on the device, stored as a bit field.
+    <!-- Hardware keys present on the device, stored as a bit field.
          This integer should equal the sum of the corresponding value for each
          of the following keys present:
              1 - Home
@@ -234,18 +234,37 @@
              4 - Menu
              8 - Assistant (search)
             16 - App switch
+            32 - Camera
+            64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
-    <!-- <integer name="config_deviceHardwareKeys">19</integer> -->
+    <integer name="config_deviceHardwareKeys">83</integer>
+
+    <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
+         This integer should equal the sum of the corresponding value for each
+         of the following keys present:
+             1 - Home
+             2 - Back
+             4 - Menu
+             8 - Assistant (search)
+            16 - App switch
+            32 - Camera
+            64 - Volume rocker
+         For example, a device with Home, Back and Menu keys would set this
+         config to 7. -->
+    <integer name="config_deviceHardwareWakeKeys">65</integer>
 
     <bool name="config_enableWifiDisplay">true</bool>
 
     <!-- Enable translucent UI -->
-    <!-- <bool name="config_enableLockScreenTranslucentDecor">true</bool>
-    <bool name="config_enableTranslucentDecor">true</bool> -->
+    <bool name="config_enableLockScreenTranslucentDecor">true</bool>
+    <bool name="config_enableTranslucentDecor">true</bool>
 
     <!--  Maximum number of supported users -->
     <integer name="config_multiuserMaximumUsers">8</integer>
+
+    <!-- Whether UI for multi user should be shown -->
+    <bool name="config_enableMultiUserUI">true</bool>
 
     <!-- Indicate whether closing the lid causes the device to go to sleep and opening
       it causes the device to wake up.
