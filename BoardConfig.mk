@@ -146,6 +146,7 @@ BOARD_SEPOLICY_UNION += \
 	servicemanager.te \
 	system_app.te \
 	system_server.te \
+	vold.te \
 	wpa.te
 
 # SurfaceFlinger
