@@ -270,4 +270,8 @@
       it causes the device to wake up.
       The default is false. -->
     <bool name="config_lidControlsSleep">true</bool>
+    
+    <!-- Boolean to enable stylus gestures -->
+    <bool name="config_stylusGestures">true</bool>
+    
 </resources>
