@@ -1,50 +1,32 @@
 [
     {
         "remote": "github",
-        "repository": "Valera1978/android_kernel_samsung_exynos5420",
-        "revision": "cm-13.0",
-        "target_path": "kernel/samsung/exynos5420"
-    },
-    {
-        "remote": "github",
-        "repository": "Valera1978/android_vendor_samsung_v1awifi",
-        "revision": "cm13",
-        "target_path": "vendor/samsung/v1awifi"
-    },
-    {
-        "remote": "github",
-        "repository": "CyanogenMod/android_external_stlport",
-        "revision": "cm13",
+        "repository": "android_external_stlport",
         "target_path": "external/stlport"
     },
     {
         "remote": "github",
-        "repository": "CyanogenMod/hardware_samsung",
-        "revision": "cm-13.0",
+        "repository": "android_hardware_samsung",
         "target_path": "hardware/samsung"
     },
     {
         "remote": "github",
-        "repository": "CyanogenMod/hardware_samsung_slsi-cm_exynos",
-        "revision": "cm-13.0",
+        "repository": "android_hardware_samsung_slsi-cm_exynos",
         "target_path": "hardware/samsung_slsi-cm/exynos"
     },
     {
         "remote": "github",
-        "repository": "CyanogenMod/hardware_samsung_slsi-cm_exynos5",
-        "revision": "cm-13.0",
+        "repository": "android_hardware_samsung_slsi-cm_exynos5",
         "target_path": "hardware/samsung_slsi-cm/exynos5"
     },
     {
         "remote": "github",
-        "repository": "CyanogenMod/hardware_samsung_slsi-cm_exynos5420",
-        "revision": "cm-13.0",
+        "repository": "android_hardware_samsung_slsi-cm_exynos5420",
         "target_path": "hardware/samsung_slsi-cm/exynos5420"
     },
     {
         "remote": "github",
-        "repository": "CyanogenMod/hardware_samsung_slsi-cm_openmax",
-        "revision": "cm-13.0",
+        "repository": "android_hardware_samsung_slsi-cm_openmax",
         "target_path": "hardware/samsung_slsi-cm/openmax"
     }
 ]
