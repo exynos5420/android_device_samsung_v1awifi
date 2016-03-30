@@ -58,6 +58,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     gps.universal5420
 
+PRODUCT_PACKAGES += \
+    libstlport \
+    libfimg
+
 # HW composer
 PRODUCT_PACKAGES += \
     libion \
@@ -111,7 +115,7 @@ PRODUCT_PACKAGES += \
     libcsc \
     libExynosOMX_Core \
     libOMX.Exynos.MP3.Decoder \
-    libstagefrighthw \
+    libstagefrighthw
 
 # Permissions
 PRODUCT_COPY_FILES += \

@@ -19,7 +19,8 @@ LOCAL_PATH := device/samsung/v1awifi
 # Platform
 BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := exynos5
-TARGET_SLSI_VARIANT := insignal
+TARGET_SLSI_VARIANT := cm
+#TARGET_SLSI_VARIANT := insignal
 TARGET_SOC := exynos5420
 
 # Architecture
@@ -44,7 +45,7 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 # Bootloader
 TARGET_OTA_ASSERT_DEVICE := v1awifi
-BLOCK_BASED_OTA := false
+#BLOCK_BASED_OTA := false
 
 # Camera
 # COMMON_GLOBAL_CFLAGS += -DUSE_MEMORY_HEAP_ION
@@ -110,7 +111,8 @@ BOARD_USE_DUALDPB_MODE := true
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2516582400
+#BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2516582400
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2300000000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 28378660864
 BOARD_FLASH_BLOCK_SIZE := 4096
 
@@ -134,21 +136,6 @@ BOARD_USES_SCALER := true
 BOARD_SEPOLICY_DIRS += \
     device/samsung/v1awifi/sepolicy
 
-BOARD_SEPOLICY_UNION += \
-	file_contexts \
-	device.te \
-	domain.te \
-	drmserver.te \
-	file.te \
-	gpsd.te \
-	init.te \
-	mediaserver.te \
-	servicemanager.te \
-	system_app.te \
-	system_server.te \
-	vold.te \
-	wpa.te
-
 # SurfaceFlinger
 BOARD_USES_SYNC_MODE_FOR_MEDIA := true
 
@@ -156,8 +143,8 @@ BOARD_USES_SYNC_MODE_FOR_MEDIA := true
 ENABLE_WEBGL := true
 
 # WFD
-BOARD_USES_WFD_SERVICE := true
-BOARD_USES_WFD := true
+#BOARD_USES_WFD_SERVICE := true
+#BOARD_USES_WFD := true
 
 # Wifi
 BOARD_HAVE_SAMSUNG_WIFI          := true

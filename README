@@ -1,7 +1,7 @@
 Device configuration for the Samsung Galaxy Note Pro 12.2
 
-Copyright (C) 2015 The CyanogenMod Project
-Copyright (C) 2015 Valera Chigir <valera1978@tut.by>
+Copyright (C) 2016 The CyanogenMod Project
+Copyright (C) 2016 Valera Chigir <valera1978@tut.by>
 
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
@@ -19,26 +19,18 @@ Copyright (C) 2015 Valera Chigir <valera1978@tut.by>
 
   - Make a workspace
 
-mkdir cm12
-cd cm12
+mkdir cm13
+cd cm13
 
   - Do repo init & sync
 
-repo init -u git://github.com/CyanogenMod/android.git -b cm-12.1
+repo init -u git://github.com/CyanogenMod/android.git -b cm-13.0
 
   - Create .repo/local_manifests/roomservice.xml with the following content:
 
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="Valera1978/android_device_samsung_v1awifi" path="device/samsung/v1awifi" remote="github" revision="cm12" />
-  <project name="Valera1978/android_kernel_samsung_v1awifi" path="kernel/samsung" remote="github" revision="cm12" />
-  <project name="Valera1978/android_vendor_samsung_v1awifi" path="vendor/samsung/v1awifi" remote="github" revision="cm12" />
-  <project name="CyanogenMod/android_kernel_samsung_exynos5420" path="kernel/samsung/exynos5420" remote="github" />
-  <project name="CyanogenMod/android_hardware_samsung" path="hardware/samsung" remote="github" />
-  <project name="CyanogenMod/android_hardware_samsung_slsi_exynos" path="hardware/samsung_slsi/exynos" remote="github" />
-  <project name="CyanogenMod/android_hardware_samsung_slsi_exynos5-insignal" path="hardware/samsung_slsi/exynos5-insignal" remote="github" />
-  <project name="CyanogenMod/android_hardware_samsung_slsi_exynos5420" path="hardware/samsung_slsi/exynos5420" remote="github" />
-  <project name="CyanogenMod/android_hardware_samsung_slsi_openmax" path="hardware/samsung_slsi/openmax" remote="github" />
+  <project name="Valera1978/android_device_samsung_v1awifi" path="device/samsung/v1awifi" remote="github" revision="cm13" />
 </manifest>
 
 repo sync
@@ -47,12 +39,6 @@ repo sync
 
   There are two options to to that. Connect your device with adb enabled and run:
 
-./extract-files.sh
-
-  Or if you have the system image unpacked on your disk, then simply run:
-
-    STOCK_ROM_DIR=/path/to/system ./extract-files.sh
-
   - Setup environment
 
 . build/envsetup.sh
@@ -60,9 +46,3 @@ repo sync
   - Build cm12
 
 brunch v1awifi
-
-or another way:
-
-lunch cm_v1awifi-userdebug
-export USE_CCACHE=1
-make -j10 bacon
