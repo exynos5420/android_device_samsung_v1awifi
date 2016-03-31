@@ -20,7 +20,6 @@ LOCAL_PATH := device/samsung/v1awifi
 BOARD_VENDOR := samsung
 TARGET_BOARD_PLATFORM := exynos5
 TARGET_SLSI_VARIANT := cm
-#TARGET_SLSI_VARIANT := insignal
 TARGET_SOC := exynos5420
 
 # Architecture
@@ -107,6 +106,13 @@ BOARD_USE_QOS_CTRL := false
 BOARD_USE_VP8ENC_SUPPORT := true
 BOARD_USE_ENCODER_RGBINPUT_SUPPORT := true
 BOARD_USE_DUALDPB_MODE := true
+
+# HEVC support in libvideocodec
+BOARD_USE_HEVC_HWIP := true
+BOARD_USE_HEVCDEC_SUPPORT := true
+
+# Sensors
+TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
