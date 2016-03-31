@@ -43,6 +43,9 @@ TARGET_BOOTANIMATION_HALF_RES := true
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1600
 
+PRODUCT_PACKAGES += \
+    libsamsung_symbols
+
 # Camera
 PRODUCT_PACKAGES += \
     camera.universal5420 \
@@ -57,6 +60,9 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_PACKAGES += \
     gps.universal5420
+
+PRODUCT_PACKAGES += \
+    libdmitry
 
 PRODUCT_PACKAGES += \
     libstlport \
