@@ -3,7 +3,9 @@ import init.universal5420.wifi.rc
 import init.samsung.rc
 
 on init
-    export LD_SHIM_LIBS "/system/lib/libexynoscamera.so|libsamsung_symbols.so:/system/bin/gpsd|libdmitry.so"
+#    export LD_SHIM_LIBS "/system/lib/libexynoscamera.so|libsamsung_symbols.so:/system/bin/gpsd|libdmitry.so"
+    export LD_PRELOAD "/system/lib/libsamsung_symbols.so"
+    export LD_SHIM_LIBS "/system/lib/omx/libOMX.Exynos.AVC.Encoder.so|libsamsung_symbols.so:/system/lib/omx/libOMX.Exynos.AVC.Decoder.so|libsamsung_symbols.so:/system/lib/omx/libOMX.Exynos.MPEG4.Decoder.so|libsamsung_symbols.so:/system/lib/omx/libOMX.Exynos.MPEG4.Encoder.so|libsamsung_symbols.so:/system/lib/omx/libOMX.Exynos.VP8.Decoder.so|libsamsung_symbols.so:/system/lib/omx/libOMX.Exynos.VP8.Encoder.so|libsamsung_symbols.so:/system/lib/omx/libOMX.Exynos.WMV.Decoder.so|libsamsung_symbols.so:/system/bin/gpsd|libdmitry.so"
 
     # Set permissions for persist partition
     mkdir /persist 0771 system system
@@ -11,6 +13,10 @@ on init
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
+    symlink /sdcard1 /storage/sdcard1
+    symlink /sdcard1 /mnt/extSdCard
+    symlink /sdcard1 /external_sd
+    symlink /storage/usbdisk /mnt/usbdisk
 
     mkdir /efs 0771 radio system
 
@@ -54,9 +60,31 @@ on post-fs-data
 
     setprop vold.post_fs_data_done 1
 
+# Permissions Camera
+    chown system radio /sys/class/camera/rear/rear_camfw
+    chown system radio /sys/class/camera/rear/rear_camfw_full
+    chown system radio /sys/class/camera/rear/rear_checkfw_user
+    chown system radio /sys/class/camera/rear/rear_checkfw_factory
+    chown system radio /sys/class/camera/rear/rear_camtype
+    chown system radio /sys/class/camera/rear/rear_companionfw
+    chown system radio /sys/class/camera/rear/rear_companionfw_full
+    chown system radio /sys/class/camera/rear/rear_calcheck
+    chown system radio /sys/class/camera/rear/isp_core
+    chown system radio /sys/class/camera/rear/fw_update
+    chown system radio /sys/class/camera/flash/rear_flash
+    chown system radio /sys/class/camera/front/front_camfw
+    chown system radio /sys/class/camera/front/front_camtype
+    chown system radio /sys/class/camera/ois/selftest
+    chown system radio /sys/class/camera/ois/ois_power
+    chown system radio /sys/class/camera/ois/ois_rawdata
+    chown system radio /sys/class/camera/ois/oisfw
+    chown system radio /sys/class/camera/ois/ois_diff
+
 # Permissions for bluetooth
     setprop ro.bt.bdaddr_path "/efs/bluetooth/bt_addr"
     chown bluetooth net_bt_stack ro.bt.bdaddr_path
+    chown radio net_bt_stack /efs/bluetooth/bt_addr
+    chmod 0640 /efs/bluetooth/bt_addr
     chown bluetooth net_bt_stack /dev/ttySAC0
     chmod 0660 /dev/ttySAC0
     chmod 0660 /sys/class/rfkill/rfkill0/state
@@ -336,7 +364,7 @@ on fs
     mkdir /preload 0771 system system
 
     mount_all /fstab.universal5420
-    setprop ro.crypto.fuse_sdcard true
+#    setprop ro.crypto.fuse_sdcard true
 
 #For Absolute Persistence Partition 
     mkdir /persdata 0755 system system 
@@ -353,6 +381,10 @@ on fs
 
 # Permissions for backlight
     chown system system /sys/class/backlight/panel/brightness
+
+# Permissions for torch
+    chown system camera /sys/class/leds/torch-sec1/brightness
+    chmod 0660 /sys/class/leds/torch-sec1/brightness
 
 # Permissions for LCD
     chown system radio /sys/class/lcd/panel/lcd_type
@@ -523,3 +555,13 @@ service swapon /sbin/sswap -s
     user root
     group root
     oneshot
+
+# Create camera ID file for Exynos camera HAL
+service camera_id /system/bin/sh /system/etc/init.exynos.cam.sh
+    class main
+    user root
+    disabled
+    oneshot
+
+on property:init.svc.bootanim=stopped
+    start camera_id

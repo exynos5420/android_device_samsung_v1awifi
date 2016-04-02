@@ -47,9 +47,21 @@ PRODUCT_PACKAGES += \
     libsamsung_symbols
 
 # Camera
+#PRODUCT_PACKAGES += \
+#	Snap
+
+# Camera
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    camera.disable_zsl_mode=1 \
+    camera2.portability.force_api=1
+
 PRODUCT_PACKAGES += \
     camera.universal5420 \
     libhwjpeg
+
+# Camera permissions
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/init.exynos.cam.sh:system/etc/init.exynos.cam.sh
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \

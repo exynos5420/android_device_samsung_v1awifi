@@ -17,6 +17,7 @@
 #include "camera/CameraParametersExtraDurationTimer.h"
 
 #define CAMERA_PARAMETERS_EXTRA_C \
+const char CameraParameters::PIXEL_FORMAT_YUV420SP_NV21[] = "nv21"; \
 const char CameraParameters::KEY_CITYID[] = "cityid"; \
 const char CameraParameters::KEY_WEATHER[] = "weather"; \
 \
@@ -32,6 +33,7 @@ CAMERA_PARAMETERS_EXTRA_C_DURATION_TIMER \
  */
 
 #define CAMERA_PARAMETERS_EXTRA_H \
+    static const char PIXEL_FORMAT_YUV420SP_NV21[]; \
     static const char KEY_CITYID[]; \
     static const char KEY_WEATHER[]; \
     \
