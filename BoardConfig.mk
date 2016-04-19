@@ -62,6 +62,9 @@ TARGET_KERNEL_CONFIG := cyanogenmod_v1awifi_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/exynos5420
 
 # Battery
+BOARD_CHARGER_SHOW_PERCENTAGE := true
+BOARD_CHARGER_ENABLE_SUSPEND := true
+BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/power_supply/battery/batt_lp_charging
 BOARD_BATTERY_DEVICE_NAME := battery
 
 # Bootloader
@@ -71,13 +74,10 @@ TARGET_NO_RADIOIMAGE := true
 
 # FIMG2D
 BOARD_USES_SKIA_FIMGAPI := true
-BOARD_USES_NEON_BLITANTIH := true
 
 # Graphics
 USE_OPENGL_RENDERER := true
-BOARD_EGL_CFG := $(LOCAL_PATH)/configs/egl.cfg
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 5
-BOARD_EGL_NEEDS_HANDLE_VALUE := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
 # Exynos display
 BOARD_USES_VIRTUAL_DISPLAY := true
@@ -93,6 +93,7 @@ TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
 # Hardware
 BOARD_HARDWARE_CLASS += device/samsung/v1awifi/cmhw
+BOARD_HARDWARE_CLASS += hardware/samsung/cmhw
 
 # Init
 TARGET_NR_SVC_SUPP_GIDS := 20

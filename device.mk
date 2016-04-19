@@ -124,7 +124,6 @@ PRODUCT_PACKAGES += \
     mcDriverDaemon
 
 # Network tools
-
 PRODUCT_PACKAGES += \
     libpcap \
     tcpdump
@@ -184,9 +183,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     sensors.universal5420
 
-# Torch
+# Charger
 PRODUCT_PACKAGES += \
-    Torch
+    charger_res_images
 
 # Wifi
 PRODUCT_COPY_FILES += \
