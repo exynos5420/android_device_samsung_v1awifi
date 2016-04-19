@@ -132,7 +132,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcsc \
     libExynosOMX_Core \
-    libOMX.Exynos.MP3.Decoder \
     libstagefrighthw
 
 # Permissions
