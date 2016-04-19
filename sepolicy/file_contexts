@@ -14,6 +14,8 @@
 /dev/ttySAC2                 u:object_r:radio_device:s0
 
 /dev/s5p-smem                u:object_r:secmem_device:s0
+/dev/ump	             u:object_r:ump_device:s0
+
 /dev/mobicore                u:object_r:tee_device:s0
 /dev/mobicore-user           u:object_r:tee_device:s0
 
