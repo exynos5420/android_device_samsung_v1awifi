@@ -330,8 +330,8 @@ on boot
     chown system radio /sys/module/asv_exynos/parameters/asv_group
 
 # MTP permission
-    chmod 0660 /dev/usb_mtp_gadget
-    chown system mtp /dev/usb_mtp_gadget
+    chmod 0660 /dev/mtp_usb
+    chown system mtp /dev/mtp_usb
 
 # terminal mode
 	chmod 0660 /sys/class/android_usb/android0/terminal_version
@@ -459,10 +459,15 @@ service bttestdaemon /system/bin/bttestd
     oneshot
 
 # for ethernet
-service dhcpcd_eth0 /system/bin/dhcpcd -ABKL
-    class main
+service dhcpcd_eth0 /system/bin/dhcpcd -aABDKL
+    class late_start
     disabled
     oneshot
+
+service iprenew_eth0 /system/bin/dhcpcd -n
+     class late_start
+     disabled
+     oneshot
 
 # Kick watchdogd if debug_level is low
 on property:ro.debug_level=0x4f4c
@@ -486,6 +491,7 @@ service gpsd /system/bin/gpsd -c /system/etc/gps.xml
     user gps
     group system inet net_raw
     ioprio be 0
+    seclabel u:r:gpsd:s0
 
 # MobiCore startup
 service mobicore /system/bin/mcDriverDaemon -r /system/app/FFFFFFFF000000000000000000000001.drbin -r /system/app/mcRegistry/ffffffffd0000000000000000000000a.tlbin
