@@ -84,7 +84,6 @@ PRODUCT_PACKAGES += \
 # HW composer
 PRODUCT_PACKAGES += \
     libion \
-    hwcomposer.exynos5 \
     gralloc.exynos5
 
 # IR
@@ -120,8 +119,7 @@ PRODUCT_PACKAGES += \
     libMcClient \
     libMcRegistry \
     libPaApi \
-    libgdmcprov \
-    mcDriverDaemon
+    libgdmcprov
 
 # Network tools
 PRODUCT_PACKAGES += \
@@ -130,17 +128,7 @@ PRODUCT_PACKAGES += \
 
 # OMX
 PRODUCT_PACKAGES += \
-    libcsc \
-    libExynosOMX_Core \
-    libOMX.Exynos.MP3.Decoder \
-    libstagefrighthw \
-    libOMX.Exynos.AVC.Decoder \
-    libOMX.Exynos.AVC.Encoder \
-    libOMX.Exynos.HEVC.Decoder \
-    libOMX.Exynos.MPEG4.Decoder \
-    libOMX.Exynos.MPEG4.Encoder \
-    libOMX.Exynos.VP8.Decoder \
-    libOMX.Exynos.WMV.Decoder
+    libcsc 
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -213,7 +201,8 @@ PRODUCT_PACKAGES += \
 # call dalvik heap config
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
 
-# call OMX build from source
+# call Samsung LSI board support package
+$(call inherit-product, hardware/samsung_slsi-cm/exynos5/exynos5.mk)
 $(call inherit-product, hardware/samsung_slsi-cm/exynos5420/exynos5420.mk)
 
 # call the proprietary setup
