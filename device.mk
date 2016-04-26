@@ -47,10 +47,6 @@ PRODUCT_PACKAGES += \
     libsamsung_symbols
 
 # Camera
-#PRODUCT_PACKAGES += \
-#	Snap
-
-# Camera
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     camera.disable_zsl_mode=1 \
     camera2.portability.force_api=1
@@ -81,10 +77,19 @@ PRODUCT_PACKAGES += \
     libstlport \
     libfimg
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/configs/gps/gps.xml:system/etc/gps.xml
+
 # HW composer
 PRODUCT_PACKAGES += \
     libion \
     gralloc.exynos5
+
+# IDC
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/idc/sec_e-pen.idc:system/usr/idc/sec_e-pen.idc \
+    $(LOCAL_PATH)/configs/idc/Synaptics_HID_TouchPad.idc:system/usr/idc/Synaptics_HID_TouchPad.idc
 
 # IR
 PRODUCT_PACKAGES += \
@@ -94,11 +99,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl \
     $(LOCAL_PATH)/configs/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl 
-
-# GPS Files
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
-    $(LOCAL_PATH)/configs/gps/gps.xml:system/etc/gps.xml
 
 # Keystore
 PRODUCT_PACKAGES += \
