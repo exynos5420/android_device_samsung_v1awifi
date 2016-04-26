@@ -94,6 +94,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl
 
+# GPS Files
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
+    $(LOCAL_PATH)/configs/gps/gps.xml:system/etc/gps.xml
+
 # Keystore
 PRODUCT_PACKAGES += \
     keystore.exynos5
