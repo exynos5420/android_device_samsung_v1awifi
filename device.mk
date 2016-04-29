@@ -55,14 +55,6 @@ PRODUCT_PACKAGES += \
     camera.universal5420 \
     libhwjpeg
 
-ADDITIONAL_DEFAULT_PROPERTIES += \
-    ro.adb.secure=0 \
-    persist.adb.notify=0 \
-    ro.secure=0 \
-    persist.sys.root_access=3 \
-    ro.debuggable=1 \
-    persist.service.adb.enable=1
-
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     make_ext4fs \
