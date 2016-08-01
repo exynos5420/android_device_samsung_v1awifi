@@ -19,7 +19,7 @@ LOCAL_PATH := device/samsung/v1awifi
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 PRODUCT_CHARACTERISTICS := tablet
-DEVICE_PACKAGE_OVERLAYS += device/samsung/v1awifi/overlay
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
@@ -46,14 +46,16 @@ TARGET_SCREEN_WIDTH := 1600
 PRODUCT_PACKAGES += \
     libsamsung_symbols
 
-# Camera
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    camera.disable_zsl_mode=1 \
-    camera2.portability.force_api=1
+# boringssl-compat
+PRODUCT_PACKAGES += \
+    libboringssl-compat
 
 PRODUCT_PACKAGES += \
     camera.universal5420 \
     libhwjpeg
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    camera2.portability.force_api=1
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -66,13 +68,6 @@ PRODUCT_PACKAGES += \
     gps.universal5420 \
     libdmitry
 
-PRODUCT_PACKAGES += \
-    libdmitry
-
-PRODUCT_PACKAGES += \
-    libstlport \
-    libfimg
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
     $(LOCAL_PATH)/configs/gps/gps.xml:system/etc/gps.xml
@@ -82,11 +77,6 @@ PRODUCT_PACKAGES += \
     libion \
     gralloc.exynos5
 
-# IDC
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/idc/sec_e-pen.idc:system/usr/idc/sec_e-pen.idc \
-    $(LOCAL_PATH)/configs/idc/Synaptics_HID_TouchPad.idc:system/usr/idc/Synaptics_HID_TouchPad.idc
-
 # IR
 PRODUCT_PACKAGES += \
     consumerir.universal5420
@@ -94,11 +84,17 @@ PRODUCT_PACKAGES += \
 # Keylayouts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl \
-    $(LOCAL_PATH)/configs/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl 
+    $(LOCAL_PATH)/configs/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \
 
 # Keystore
 PRODUCT_PACKAGES += \
     keystore.exynos5
+
+# libstlport
+# M removes libstlport, but some of our binary-only prebuilts need it, so we'll
+# add it back
+PRODUCT_PACKAGES += \
+    libstlport
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -130,7 +126,7 @@ PRODUCT_PACKAGES += \
 
 # OMX
 PRODUCT_PACKAGES += \
-    libcsc 
+    libcsc
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -152,7 +148,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
+    frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml
+
+
 
 # Power
 PRODUCT_PACKAGES += \
@@ -162,6 +161,7 @@ PRODUCT_PACKAGES += \
     fstab.universal5420 \
     init.samsung.rc \
     init.universal5420.rc \
+    init.universal5420.power.rc \
     init.universal5420.usb.rc \
     init.universal5420.wifi.rc \
     ueventd.universal5420.rc
