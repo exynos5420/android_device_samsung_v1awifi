@@ -77,6 +77,11 @@ PRODUCT_PACKAGES += \
     libion \
     gralloc.exynos5
 
+# IDC		
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/idc/sec_e-pen.idc:system/usr/idc/sec_e-pen.idc \
+    $(LOCAL_PATH)/configs/idc/Synaptics_HID_TouchPad.idc:system/usr/idc/Synaptics_HID_TouchPad.idc
+
 # IR
 PRODUCT_PACKAGES += \
     consumerir.universal5420
