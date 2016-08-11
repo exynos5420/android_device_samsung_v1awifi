@@ -26,7 +26,7 @@ cd cm13
 
 repo init -u git://github.com/CyanogenMod/android.git -b cm-13.0
 
-  - Create .repo/local_manifests/roomservice.xml with the following content:
+  - Create .repo/local_manifests/roomservice.xml with the following contents:
 
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
@@ -37,20 +37,20 @@ repo init -u git://github.com/CyanogenMod/android.git -b cm-13.0
   <project name="CyanogenMod/android_hardware_samsung" path="hardware/samsung" remote="github" />
   <project name="CyanogenMod/android_hardware_samsung_slsi-cm_exynos" path="hardware/samsung_slsi-cm/exynos" remote="github" />
   <project name="CyanogenMod/android_hardware_samsung_slsi-cm_exynos5" path="hardware/samsung_slsi-cm/exynos5" remote="github" />
-  <project name="CyanogenMod/android_hardware_samsung_slsi-cm_exynos5420" path="hardware/samsung_slsi-cm/exynos5420" remote="github" />
+<!--This is broken. Hence why it is commented out  <project name="CyanogenMod/android_hardware_samsung_slsi-cm_exynos5420" path="hardware/samsung_slsi-cm/exynos5420" remote="github" />-->
+  <project name="CM-Tab-S/android_hardware_samsung_slsi-cm_exynos5420" path="hardware/samsung_slsi-cm/exynos5420" remote="github" />
   <project name="CyanogenMod/android_hardware_samsung_slsi-cm_openmax" path="hardware/samsung_slsi-cm/openmax" remote="github" />
 </manifest>
 
 repo sync
 
-  - Copy proprietary vendor files
-
-  There are two options to to that. Connect your device with adb enabled and run:
 
   - Setup environment
 
 . build/envsetup.sh
 
-  - Build cm12
+  - Build cm13
 
 brunch v1awifi
+
+  - Go grab your build from the out directory listed.
