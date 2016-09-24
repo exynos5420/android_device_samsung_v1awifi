@@ -182,9 +182,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.recovery.universal5420.rc
 
+# Variant linking script
+PRODUCT_COPY_FILES += \
+    device/samsung/v1awifi/releasetools/variant_script.sh:install/bin/variant_script.sh
+
 # Sensors
 PRODUCT_PACKAGES += \
-    sensors.universal5420
+    sensors.universal5420 \
+    v2wifixx.sensors.universal5420
 
 # CPU producer to CPU consumer not supported
 PRODUCT_PROPERTY_OVERRIDES += \
