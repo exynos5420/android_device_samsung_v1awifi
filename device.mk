@@ -182,6 +182,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.recovery.universal5420.rc
 
+# Variant linking script
+PRODUCT_COPY_FILES += \
+    device/samsung/v1awifi/releasetools/variant_script.sh:install/bin/variant_script.sh
+
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.universal5420
