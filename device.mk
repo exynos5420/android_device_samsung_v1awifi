@@ -184,7 +184,8 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    sensors.universal5420
+    sensors.universal5420 \
+    v2wifixx.sensors.universal5420
 
 # CPU producer to CPU consumer not supported
 PRODUCT_PROPERTY_OVERRIDES += \
