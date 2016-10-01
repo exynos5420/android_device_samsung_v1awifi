@@ -80,6 +80,19 @@ BOARD_USES_SKIA_FIMGAPI := true
 USE_OPENGL_RENDERER := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
 
+# Mixer
+BOARD_USE_BGRA_8888 := true
+
+# Shader cache config options
+# Maximum size of the  GLES Shaders that can be cached for reuse.
+# Increase the size if shaders of size greater than 12KB are used.
+MAX_EGL_CACHE_KEY_SIZE := 12*1024
+
+# Maximum GLES shader cache size for each app to store the compiled shader
+# binaries. Decrease the size if RAM or Flash Storage size is a limitation
+# of the device.
+MAX_EGL_CACHE_SIZE := 2048*1024
+
 # Renderscript
 BOARD_OVERRIDE_RS_CPU_VARIANT_32 := cortex-a53
 
@@ -88,6 +101,13 @@ BOARD_USES_VIRTUAL_DISPLAY := true
 
 # HWCServices
 BOARD_USES_HWC_SERVICES := true
+
+# HDMI
+# hardware/samsung_slsi/exynos/libhdmi_legacy
+TARGET_LINUX_KERNEL_VERSION := 3.4
+BOARD_USES_CEC := true
+BOARD_USES_GSC_VIDEO := true
+BOARD_USES_CEC := true
 
 # Keymaster
 BOARD_USES_TRUST_KEYMASTER := true
@@ -119,7 +139,6 @@ BOARD_USE_NON_CACHED_GRAPHICBUFFER := true
 BOARD_USE_GSC_RGB_ENCODER := true
 BOARD_USE_CSC_HW := true
 BOARD_USE_QOS_CTRL := false
-BOARD_USE_S3D_SUPPORT := true
 BOARD_USE_VP8ENC_SUPPORT := true
 
 # Sensors
