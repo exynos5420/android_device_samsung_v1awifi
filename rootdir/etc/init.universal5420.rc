@@ -133,10 +133,8 @@ on boot
     mkdir /system/app/mcRegistry/TbStorage 0775 system system
     chmod 0700 /dev/mobicore
     chmod 0666 /dev/mobicore-user
-    chmod 0660 /dev/s5p-smem
     chown system system /dev/mobicore
     chown radio system /dev/mobicore-user
-    chown system system /dev/s5p-smem
 # DRK permission
     mkdir /efs/prov 0770 radio system
     chown radio system /efs/prov_data
