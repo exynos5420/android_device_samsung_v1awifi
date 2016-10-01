@@ -92,6 +92,9 @@ BOARD_USES_HWC_SERVICES := true
 # Keymaster
 BOARD_USES_TRUST_KEYMASTER := true
 
+# Enable Minikin text layout engine (will be the default soon)
+USE_MINIKIN := true
+
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
