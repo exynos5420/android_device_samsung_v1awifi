@@ -79,6 +79,15 @@
 <MediaSettings>
     <!-- Each camcorder profile defines a set of predefined configuration parameters -->
     <CamcorderProfiles cameraId="0" startOffsetMs="700">
+<<<<<<< HEAD
+=======
+    <EncoderProfile quality="low" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+             bitRate="384000"
+             width="176"
+             height="144"
+             frameRate="30" />
+>>>>>>> ea9f083... Update configs based on M release
 
 
     <EncoderProfile quality="high" fileFormat="mp4" duration="30">
@@ -89,7 +98,24 @@
              frameRate="30" />
 
       <Audio codec="aac"
+<<<<<<< HEAD
              bitRate="256000"
+=======
+             bitRate="128000"
+             sampleRate="48000"
+             channels="2" />
+    </EncoderProfile>
+
+    <EncoderProfile quality="qcif" fileFormat="mp4" duration="30">
+            <Video codec="h264"
+             bitRate="384000"
+             width="176"
+             height="144"
+             frameRate="30" />
+
+            <Audio codec="aac"
+             bitRate="128000"
+>>>>>>> ea9f083... Update configs based on M release
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
@@ -114,8 +140,13 @@
              height="720"
              frameRate="30" />
 
+<<<<<<< HEAD
       <Audio codec="aac"
              bitRate="256000"
+=======
+            <Audio codec="aac"
+             bitRate="128000"
+>>>>>>> ea9f083... Update configs based on M release
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
@@ -127,12 +158,31 @@
              height="1080"
              frameRate="30" />
 
-      <Audio codec="aac"
-             bitRate="256000"
+            <Audio codec="aac"
+             bitRate="128000"
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
 
+<<<<<<< HEAD
+=======
+    <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+             bitRate="384000"
+             width="176"
+             height="144"
+             frameRate="30" />
+
+      <!--
+            The Audio part of the profile will not be used since time lapse mode
+            does not capture audio
+      -->
+      <Audio codec="aac"
+             bitRate="128000"
+             sampleRate="48000"
+             channels="2" />
+    </EncoderProfile>
+>>>>>>> ea9f083... Update configs based on M release
 
     <EncoderProfile quality="timelapsehigh" fileFormat="mp4" duration="30">
       <Video codec="h264"
@@ -145,12 +195,36 @@
             The Audio part of the profile will not be used since time lapse mode
             does not capture audio
       -->
+<<<<<<< HEAD
       <Audio codec="aac"
              bitRate="256000"
+=======
+            <Audio codec="aac"
+             bitRate="128000"
+>>>>>>> ea9f083... Update configs based on M release
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
 
+<<<<<<< HEAD
+=======
+    <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+             bitRate="384000"
+             width="176"
+             height="144"
+             frameRate="30" />
+
+      <!--
+            The Audio part of the profile will not be used since time lapse mode
+            does not capture audio
+      -->
+      <Audio codec="aac"
+             bitRate="128000"
+             sampleRate="48000"
+             channels="2" />
+    </EncoderProfile>
+>>>>>>> ea9f083... Update configs based on M release
 
     <EncoderProfile quality="timelapseqvga" fileFormat="mp4" duration="30">
       <Video codec="h264"
@@ -181,9 +255,15 @@
             does not capture audio
       -->
      <Audio codec="aac"
+<<<<<<< HEAD
             bitRate="256000"
             sampleRate="48000"
             channels="2" />
+=======
+             bitRate="128000"
+             sampleRate="48000"
+             channels="2" />
+>>>>>>> ea9f083... Update configs based on M release
     </EncoderProfile>
 
     <EncoderProfile quality="timelapse1080p" fileFormat="mp4" duration="30">
@@ -198,7 +278,7 @@
             does not capture audio
       -->
       <Audio codec="aac"
-             bitRate="256000"
+             bitRate="128000"
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
@@ -213,6 +293,21 @@
     <!-- Front Camera -->
     <CamcorderProfiles cameraId="1" startOffsetMs="700">
 
+<<<<<<< HEAD
+=======
+    <EncoderProfile quality="low" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+             bitRate="384000"
+             width="176"
+             height="144"
+             frameRate="30" />
+
+      <Audio codec="aac"
+             bitRate="128000"
+             sampleRate="48000"
+             channels="2" />
+    </EncoderProfile>
+>>>>>>> ea9f083... Update configs based on M release
 
     <EncoderProfile quality="high" fileFormat="mp4" duration="30">
       <Video codec="h264"
@@ -222,11 +317,30 @@
              frameRate="30" />
 
       <Audio codec="aac"
+<<<<<<< HEAD
              bitRate="256000"
+=======
+             bitRate="128000"
+>>>>>>> ea9f083... Update configs based on M release
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
 
+<<<<<<< HEAD
+=======
+    <EncoderProfile quality="qcif" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+             bitRate="384000"
+             width="176"
+             height="144"
+             frameRate="30" />
+
+      <Audio codec="aac"
+             bitRate="128000"
+             sampleRate="48000"
+             channels="2" />
+    </EncoderProfile>
+>>>>>>> ea9f083... Update configs based on M release
 
     <EncoderProfile quality="qvga" fileFormat="mp4" duration="30">
       <Video codec="h264"
@@ -249,7 +363,7 @@
              frameRate="30" />
 
       <Audio codec="aac"
-             bitRate="256000"
+             bitRate="128000"
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
@@ -262,11 +376,30 @@
              frameRate="30" />
 
       <Audio codec="aac"
-             bitRate="256000"
+             bitRate="128000"
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
 
+<<<<<<< HEAD
+=======
+    <EncoderProfile quality="timelapselow" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+             bitRate="384000"
+             width="176"
+             height="144"
+             frameRate="30" />
+
+      <!--
+            The Audio part of the profile will not be used since time lapse mode
+            does not capture audio
+      -->
+      <Audio codec="aac"
+             bitRate="128000"
+             sampleRate="48000"
+             channels="2" />
+    </EncoderProfile>
+>>>>>>> ea9f083... Update configs based on M release
 
     <EncoderProfile quality="timelapsehigh" fileFormat="mp4" duration="30">
       <Video codec="h264"
@@ -280,11 +413,30 @@
              does not capture audio
        -->
       <Audio codec="aac"
-             bitRate="256000"
+             bitRate="128000"
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
 
+<<<<<<< HEAD
+=======
+    <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
+      <Video codec="h264"
+			       bitRate="384000"
+			       width="176"
+			       height="144"
+			       frameRate="30" />
+
+ <!--
+       The Audio part of the profile will not be used since time lapse mode
+       does not capture audio
+ -->
+      <Audio codec="aac"
+			       bitRate="128000"
+			       sampleRate="48000"
+			       channels="2" />
+    </EncoderProfile>
+>>>>>>> ea9f083... Update configs based on M release
 
     <EncoderProfile quality="timelapseqvga" fileFormat="mp4" duration="30">
       <Video codec="h264"
@@ -315,7 +467,7 @@
              does not capture audio
        -->
       <Audio codec="aac"
-             bitRate="256000"
+             bitRate="128000"
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
@@ -332,7 +484,7 @@
              does not capture audio
        -->
       <Audio codec="aac"
-             bitRate="256000"
+             bitRate="128000"
              sampleRate="48000"
              channels="2" />
     </EncoderProfile>
@@ -353,7 +505,7 @@
          or query the capabilities of the codec at all if it is disabled
     -->
     <VideoEncoderCap name="h264" enabled="true"
-        minBitRate="64000" maxBitRate="20000000"
+        minBitRate="64000" maxBitRate="17000000"
         minFrameWidth="176" maxFrameWidth="1920"
         minFrameHeight="144" maxFrameHeight="1080"
         minFrameRate="1" maxFrameRate="30" />
@@ -371,7 +523,11 @@
         minFrameRate="1" maxFrameRate="30" />
 
     <AudioEncoderCap name="aac" enabled="true"
+<<<<<<< HEAD
         minBitRate="8192" maxBitRate="256000"
+=======
+        minBitRate="758" maxBitRate="288000"
+>>>>>>> ea9f083... Update configs based on M release
         minSampleRate="8000" maxSampleRate="48000"
         minChannels="1" maxChannels="2" />
 
@@ -404,6 +560,7 @@
     -->
     <VideoDecoderCap name="wmv" enabled="false"/>
     <AudioDecoderCap name="wma" enabled="false"/>
+<<<<<<< HEAD
 
     <!--
         The VideoEditor Capability configuration:
@@ -439,4 +596,6 @@
       Codec = mpeg4, Simple profile, level 5
     -->
     <ExportVideoProfile name="m4v" profile= "1" level="128"/>
+=======
+>>>>>>> ea9f083... Update configs based on M release
 </MediaSettings>
