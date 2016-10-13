@@ -186,6 +186,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     sensors.universal5420
 
+# Telephony-ext
+PRODUCT_PACKAGES += telephony-ext
+PRODUCT_BOOT_JARS += telephony-ext
+
 # CPU producer to CPU consumer not supported
 PRODUCT_PROPERTY_OVERRIDES += \
  ro.bq.gpu_to_cpu_unsupported=1
@@ -197,15 +201,17 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
 
 PRODUCT_PACKAGES += \
-    dhcpcd.conf \
     hostapd \
     hostapd_default.conf \
     libwpa_client \
-    wpa_supplicant
-
-PRODUCT_PACKAGES += \
+    wpa_supplicant \
     libnetcmdiface \
     macloader
+
+ PRODUCT_PROPERTY_OVERRIDES += \
+      wifi.interface=wlan0 \
+      ro.data.large_tcp_window_size=true \
+      ro.radio.noril=yes
 
 # call dalvik heap config
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
