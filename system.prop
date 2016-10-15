@@ -27,11 +27,8 @@ ro.hwui.text_large_cache_height=1024
 ro.radio.noril=yes
 
 # Randomly from stock
-ro.ril.gprsclass=10
-ro.ril.hsxpa=1
 ro.sec.fle.encryption=true
 ro.secwvk=220
-ro.securestorage.support=true
 
 # Wifi
 wifi.interface=wlan0
