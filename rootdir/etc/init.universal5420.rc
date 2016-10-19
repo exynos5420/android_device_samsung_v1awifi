@@ -126,7 +126,7 @@ on boot
 
 # Permissions for gpio_keys
     chown radio system /sys/class/sec/sec_key/wakeup_keys
-    write /sys/class/sec/sec_key/wakeup_keys 116,17
+    write /sys/class/sec/sec_key/wakeup_keys 116,172
 
 # Permissions for PowerHAL
     chown system system /sys/class/input/input10/enabled
