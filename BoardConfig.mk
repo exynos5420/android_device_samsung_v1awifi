@@ -92,6 +92,10 @@ BOARD_USES_HWC_SERVICES := true
 # Keymaster
 BOARD_USES_TRUST_KEYMASTER := true
 
+# Extended filesystem support
+TARGET_KERNEL_HAVE_EXFAT := true
+TARGET_KERNEL_HAVE_NTFS := true
+
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
