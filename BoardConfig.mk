@@ -136,6 +136,12 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 # PowerHAL
 TARGET_POWERHAL_VARIANT := samsung
 
+# Enable dex-preoptimization to speed up first boot sequence
+WITH_DEXPREOPT := true
+
+# Disable journaling on system.img to save space
+BOARD_SYSTEMIMAGE_JOURNAL_SIZE := 0
+
 # Recovery
 COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_23x41.h\"
