@@ -25,6 +25,6 @@
      value at runtime for some things) -->
     <bool name="config_recents_interface_for_tablets">true</bool>
 
-    <!-- Whether rotation lock shows up in quick settings or not -->
-    <bool name="quick_settings_show_rotation_lock">true</bool>
+    <!-- Show rotation lock toggle in System UI-->
+    <bool name="config_showRotationLock">true</bool>
 </resources>
