@@ -1,0 +1,54 @@
+on init
+    export LD_SHIM_LIBS "/system/bin/gpsd|libdmitry.so"
+
+on boot
+    setprop ro.radio.noril yes
+    stop ril-daemon
+
+# Bluetooth Audio (AVRCP)
+    chown system system /sys/class/input/input12/enabled
+    chmod 0660 /sys/class/input/input12/enabled
+
+# Keyboard?? (Keys-To-Go AW)
+    chown system system /sys/class/input/input11/enabled
+    chmod 0660 /sys/class/input/input11/enabled
+
+# Headphones (Headset)
+    chown system system /sys/class/input/input10/enabled
+    chmod 0660 /sys/class/input/input10/enabled
+
+# S-Pen (sec_e-pen)
+    chown system radio /sys/class/input/input9/enabled
+    chmod 0660 /sys/class/input/input9/enabled
+
+# Physical Home Button (gpio-keys)
+    chown system system /sys/class/input/input8/enabled
+    chmod 0660 /sys/class/input/input8/enabled
+
+# Light Sensor
+    chown system system /sys/class/input/input7/enabled
+    chmod 0660 /sys/class/input/input7/enabled
+
+# Magnetic Sensor
+    chown system system /sys/class/input/input6/enabled
+    chmod 0660 /sys/class/input/input6/enabled
+
+# Gyro Sensor
+    chown system system /sys/class/input/input5/enabled
+    chmod 0660 /sys/class/input/input5/enabled
+
+# Accelerometer sensor
+    chown system system /sys/class/input/input4/enabled
+    chmod 0660 /sys/class/input/input4/enabled
+
+# MHL (sii8240_rcp)
+    chown system system /sys/class/input/input3/enabled
+    chmod 0660 /sys/class/input/input3/enabled
+
+# Touchscreen (sec_touchscreen)
+    chown system system /sys/class/input/input2/enabled
+    chmod 0660 /sys/class/input/input2/enabled
+
+# Micro-USB IC (max77803-muic)
+    chown system system /sys/class/input/input0/enabled
+    chmod 0660 /sys/class/input/input0/enabled
