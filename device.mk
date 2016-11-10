@@ -186,6 +186,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.recovery.universal5420.rc
 
+# Releasetools
+    $(LOCAL_PATH)/releasetools/seandroid.sh:install/bin/seandroid.sh
+
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.universal5420
