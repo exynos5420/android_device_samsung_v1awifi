@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2013 The CyanogenMod Project
+# Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -37,7 +37,6 @@ IR_HAS_ONE_FREQ_RANGE := true
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760
-#BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2516582400
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2300000000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 28378660864
 BOARD_FLASH_BLOCK_SIZE := 4096
@@ -47,6 +46,6 @@ TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := $(LOCAL_PATH)/releasetools/ota_from
 
 # SELinux
 BOARD_SEPOLICY_DIRS += device/samsung/exynos5420-common/sepolicy
-
+BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
 # Inherit from exynos5420-common
 include device/samsung/exynos5420-common/BoardConfigCommon.mk
