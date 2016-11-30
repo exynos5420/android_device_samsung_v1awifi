@@ -9,8 +9,8 @@ on boot
     chown system system /sys/class/input/input12/enabled
     chmod 0660 /sys/class/input/input12/enabled
 
-# Keyboard?? (Keys-To-Go AW)
-    chown system system /sys/class/input/input11/enabled
+# Bluetooth Keyboard
+    chown system radio /sys/class/input/input11/enabled
     chmod 0660 /sys/class/input/input11/enabled
 
 # Headphones (Headset)
@@ -18,7 +18,7 @@ on boot
     chmod 0660 /sys/class/input/input10/enabled
 
 # S-Pen (sec_e-pen)
-    chown system radio /sys/class/input/input9/enabled
+    chown system system /sys/class/input/input9/enabled
     chmod 0660 /sys/class/input/input9/enabled
 
 # Physical Home Button (gpio-keys)
