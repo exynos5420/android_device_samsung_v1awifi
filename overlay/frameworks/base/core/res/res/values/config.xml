@@ -81,8 +81,4 @@
     <integer name="config_deviceHardwareWakeKeys">65</integer>
 
 
-    <!-- Boolean to enable stylus gestures -->
-    <bool name="config_stylusGestures">true</bool>
-
-
 </resources>
