@@ -52,3 +52,13 @@ on boot
 # Micro-USB IC (max77803-muic)
     chown system system /sys/class/input/input0/enabled
     chmod 0660 /sys/class/input/input0/enabled
+
+# Wolfson DAC Settings
+    write /sys/class/misc/wolfson_control/switch_eq_speaker  1 # Toggle EQ
+    write /sys/class/misc/wolfson_control/speaker_gain_left 5 # Set Left Speaker Gain
+    write /sys/class/misc/wolfson_control/speaker_gain_right 5 # Set Right Speaker Gain
+    write /sys/class/misc/wolfson_control/eq_sp_gain_1 4 # Low Band
+    write /sys/class/misc/wolfson_control/eq_sp_gain_2 4 # Low-Mid Band
+    write /sys/class/misc/wolfson_control/eq_sp_gain_3 4 # Mid Band
+    write /sys/class/misc/wolfson_control/eq_sp_gain_4 5 # Mid-High Band
+    write /sys/class/misc/wolfson_control/eq_sp_gain_5 4 # High Band
