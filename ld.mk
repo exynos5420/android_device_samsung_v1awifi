@@ -10,10 +10,10 @@ PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := SM-P900
 
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
+# Inherit some common LD stuff.
+$(call inherit-product, vendor/ld/config/common_full_tablet_wifionly.mk)
 
-PRODUCT_NAME := lineage_v1awifi
+PRODUCT_NAME := ld_v1awifi
 PRODUCT_DEVICE := v1awifi
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
