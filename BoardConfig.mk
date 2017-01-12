@@ -30,7 +30,6 @@ TARGET_OTA_ASSERT_DEVICE := v1awifi
 
 # Kernel
 TARGET_KERNEL_CONFIG := liquiddeathos_deathly_v1awifi_defconfig
-BOARD_CUSTOM_BOOTIMG := true
 
 # IR Blaster
 IR_HAS_ONE_FREQ_RANGE := true
