@@ -8,5 +8,5 @@ ro.sf.lcd_density=320
 # Radio
 ro.radio.noril=yes
 
-# HW (this enables the navbar, a user can easily set it to 1 to disable it)
-qemu.hw.mainkeys=0 
+# LD Device Maintainer
+ro.ld.maintainer=Thomas Patry (thompatry)
