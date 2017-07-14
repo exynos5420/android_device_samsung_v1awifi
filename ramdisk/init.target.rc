@@ -2,7 +2,6 @@ on init
     export LD_SHIM_LIBS "/system/bin/gpsd|libdmitry.so"
 
 on boot
-    setprop ro.radio.noril yes
     stop ril-daemon
 
 # Bluetooth Audio (AVRCP)
