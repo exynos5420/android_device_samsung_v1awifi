@@ -29,6 +29,9 @@ PRODUCT_PACKAGES += \
     audio.primary.universal5420
 
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
+
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/mixer_paths.xml:system/etc/mixer_paths.xml
 
 # Boot animation
