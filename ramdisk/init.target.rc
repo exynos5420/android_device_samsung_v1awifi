@@ -19,6 +19,7 @@ on boot
 # S-Pen (sec_e-pen)
     chown system system /sys/class/input/input9/enabled
     chmod 0660 /sys/class/input/input9/enabled
+    chown system radio /sys/class/sec/sec_epen/epen_gestures
 
 # Physical Home Button (gpio-keys)
     chown system system /sys/class/input/input8/enabled

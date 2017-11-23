@@ -28,6 +28,9 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 # Bootloader
 TARGET_OTA_ASSERT_DEVICE := v1awifi
 
+#CMHW
+BOARD_HARDWARE_CLASS += device/samsung/v1awifi/cmhw
+
 # Kernel
 TARGET_KERNEL_CONFIG := lineageos_deathly_v1awifi_defconfig
 BOARD_CUSTOM_BOOTIMG := true
