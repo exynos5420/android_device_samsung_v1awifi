@@ -35,6 +35,10 @@ PRODUCT_COPY_FILES += \
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1600
 
+# Gestures
+PRODUCT_PACKAGES += \
+    com.cyanogenmod.keyhandler
+
 # GPS SHIM
 PRODUCT_PACKAGES += \
     libdmitry
