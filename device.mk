@@ -17,7 +17,7 @@
 LOCAL_PATH := device/samsung/v1awifi
 
 PRODUCT_CHARACTERISTICS := tablet
-DEVICE_PACKAGE_OVERLAYS += device/samsung/v1awifi/overlay
+#DEVICE_PACKAGE_OVERLAYS += device/samsung/v1awifi/overlay
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := xlarge
