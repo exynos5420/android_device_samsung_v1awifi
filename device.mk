@@ -22,6 +22,11 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_PACKAGES += \
     init.target.rc
 
+
+# Vendor security patch level
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lineage.build.vendor_security_patch=2015-09-02
+
 # System properties
 -include $(LOCAL_PATH)/system_prop.mk
 
