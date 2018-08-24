@@ -40,7 +40,8 @@ TARGET_SCREEN_WIDTH := 1600
 
 # GPS SHIM
 PRODUCT_PACKAGES += \
-    libdmitry
+    libdmitry \
+    libshim_camera
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
