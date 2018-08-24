@@ -37,7 +37,8 @@ IR_HAS_ONE_FREQ_RANGE := true
 
 # GPS
 TARGET_LD_SHIM_LIBS += \
-	/system/bin/gpsd|libdmitry.so
+	/system/bin/gpsd|libdmitry.so \
+        /system/lib/libexynoscamera.so|libshim_camera.so
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
