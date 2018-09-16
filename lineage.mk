@@ -20,4 +20,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_MODEL=SM-P900 \
     PRODUCT_NAME=v1awifi \
     PRODUCT_DEVICE=v1awifi \
+    PRIVATE_BUILD_DESC="samsung/v1awifixx/v1awifi:5.0.2/LRX22G/P900XXU0BOI1:user/release-keys" \
     TARGET_DEVICE=v1awifi
+
+BUILD_FINGERPRINT := samsung/v1awifixx/v1awifi:5.0.2/LRX22G/P900XXU0BOI1:user/release-keys
