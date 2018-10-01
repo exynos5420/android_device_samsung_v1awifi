@@ -22,3 +22,6 @@ PRODUCT_PACKAGES += \
 
 # Inherit from v1a-common
 $(call inherit-product, device/samsung/v1a-common/device-common.mk)
+
+# call the proprietary setup
+$(call inherit-product-if-exists, vendor/samsung/v1awifi/v1awifi-vendor.mk)
