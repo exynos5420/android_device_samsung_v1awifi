@@ -51,8 +51,8 @@ int sensors_list_get(struct sensors_module_t* module, struct sensor_t const** pl
 	return gVendorModule->get_sensors_list(module, plist);
 }
 
-static int wrapper_sensors_module_batch(struct sensors_poll_device_1 *dev,
-					int handle, int flags, int64_t ns, int64_t timeout) {
+static int wrapper_sensors_module_batch(struct sensors_poll_device_1 *dev __unused,
+					int handle, int flags __unused, int64_t ns, int64_t timeout __unused) {
 	return samsung_hw_dev->setDelay(samsung_hw_dev, handle, ns);
 }
 
@@ -69,10 +69,10 @@ static int wrapper_sensors_module_close(struct hw_device_t* device) {
 	return ret;
 }
 
-WRAP_HAL(setDelay, int, (struct sensors_poll_device_t *dev, int handle, int64_t ns), (samsung_hw_dev, handle, ns))
-WRAP_HAL(activate, int, (struct sensors_poll_device_t *dev, int handle, int enabled), (samsung_hw_dev, handle, enabled))
-WRAP_HAL(poll, int, (struct sensors_poll_device_t *dev, sensors_event_t* data, int count), (samsung_hw_dev, data, count))
-WRAP_HAL(flush, int, (struct sensors_poll_device_1_t *dev, int handle), (samsung_hw_dev, handle))
+WRAP_HAL(setDelay, int, (struct sensors_poll_device_t *dev __unused, int handle, int64_t ns), (samsung_hw_dev, handle, ns))
+WRAP_HAL(activate, int, (struct sensors_poll_device_t *dev __unused, int handle, int enabled), (samsung_hw_dev, handle, enabled))
+WRAP_HAL(poll, int, (struct sensors_poll_device_t *dev __unused, sensors_event_t* data, int count), (samsung_hw_dev, data, count))
+WRAP_HAL(flush, int, (struct sensors_poll_device_1_t *dev __unused, int handle), (samsung_hw_dev, handle))
 
 static int sensors_module_open(const struct hw_module_t* module, const char* id, struct hw_device_t** device) {
 	int ret=0;
@@ -139,19 +139,19 @@ static int sensors_module_open(const struct hw_module_t* module, const char* id,
 }
 
 struct hw_module_methods_t sensors_module_methods = {
-	open: sensors_module_open
+	.open = sensors_module_open
 };
 
 struct sensors_module_t HAL_MODULE_INFO_SYM = {
-	common: {
-		tag: HARDWARE_MODULE_TAG,
-		version_major: 1,
-		version_minor: 0,
-		id: SENSORS_HARDWARE_MODULE_ID,
-		name : "Samsung Sensors HAL Wrapper",
-		author : "Martin Bouchet (tincho5588@gmail.com)",
-		methods: &sensors_module_methods,
+	.common = {
+		.tag . HARDWARE_MODULE_TAG,
+		.version_major = 1,
+		.version_minor = 0,
+		.id = SENSORS_HARDWARE_MODULE_ID,
+		.name = "Samsung Sensors HAL Wrapper",
+		.author = "Martin Bouchet (tincho5588@gmail.com)",
+		.methods = &sensors_module_methods,
 	},
-	get_sensors_list: sensors_list_get
+	.get_sensors_list = sensors_list_get
 };
 
