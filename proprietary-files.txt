@@ -2,11 +2,11 @@
 # Vendor security patch level 2016-05-01
 
 # DRM
-lib/liboemcrypto.so
+lib/liboemcrypto.so:vendor/lib/liboemcrypto.so
 
 # GPS
-bin/gpsd
-lib/hw/gps.default.so:lib/hw/gps.universal5420.so
+bin/gpsd:vendor/bin/gpsd
+lib/hw/gps.default.so:vendor/lib/hw/gps.universal5420.so
 
 # NXP Noise Cancelling
 vendor/etc/nxp/LVVEFS_Rx_Configuration.txt
@@ -85,4 +85,4 @@ vendor/etc/nxp/mVoIPWebEx/Tx_ControlParams_WIDEBAND_WIRED_HEADPHONE.txt
 vendor/etc/nxp/mVoIPWebEx/Tx_ControlParams_WIDEBAND_WIRED_HEADSET.txt
 
 # Sensors
-lib/hw/sensors.universal5420.so:lib/sensors.universal5420.so
+lib/hw/sensors.universal5420.so:vendor/lib/sensors.universal5420.so
