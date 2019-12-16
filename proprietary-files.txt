@@ -85,4 +85,4 @@ vendor/etc/nxp/mVoIPWebEx/Tx_ControlParams_WIDEBAND_WIRED_HEADPHONE.txt
 vendor/etc/nxp/mVoIPWebEx/Tx_ControlParams_WIDEBAND_WIRED_HEADSET.txt
 
 # Sensors
-lib/hw/sensors.universal5420.so
+lib/hw/sensors.universal5420.so:lib/sensors.universal5420.so
