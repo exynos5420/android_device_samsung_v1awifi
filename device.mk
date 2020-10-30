@@ -29,10 +29,10 @@ PRODUCT_PACKAGES += \
     audio.primary.universal5420
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
+    $(LOCAL_PATH)/manifest.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/mixer_paths.xml:system/etc/mixer_paths.xml
+    $(LOCAL_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/mixer_paths.xml
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2560
@@ -43,21 +43,21 @@ PRODUCT_PACKAGES += \
     libdmitry
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf \
-    $(LOCAL_PATH)/configs/gps/gps.xml:system/etc/gps.xml
+    $(LOCAL_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/gps.conf \
+    $(LOCAL_PATH)/configs/gps/gps.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/gps.xml
 
 # IDC
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/idc/sec_e-pen.idc:system/usr/idc/sec_e-pen.idc \
-    $(LOCAL_PATH)/configs/idc/Synaptics_HID_TouchPad.idc:system/usr/idc/Synaptics_HID_TouchPad.idc
+    $(LOCAL_PATH)/configs/idc/sec_e-pen.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/sec_e-pen.idc \
+    $(LOCAL_PATH)/configs/idc/Synaptics_HID_TouchPad.idc:$(TARGET_COPY_OUT_SYSTEM)/usr/idc/Synaptics_HID_TouchPad.idc
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/keylayout/sec_touchscreen.kl:system/usr/keylayout/sec_touchscreen.kl
+    $(LOCAL_PATH)/configs/keylayout/sec_touchscreen.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/sec_touchscreen.kl
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
+    frameworks/native/data/etc/tablet_core_hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/tablet_core_hardware.xml
 
 PRODUCT_PACKAGES += \
     fstab.universal5420 \
