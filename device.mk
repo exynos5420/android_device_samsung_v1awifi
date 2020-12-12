@@ -38,13 +38,17 @@ PRODUCT_COPY_FILES += \
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1600
 
-# GPS SHIM
+# GPS
 PRODUCT_PACKAGES += \
-    libdmitry
+    android.hardware.gnss@1.0-impl
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/gps.conf \
     $(LOCAL_PATH)/configs/gps/gps.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/gps.xml
+
+# GPS SHIM
+PRODUCT_PACKAGES += \
+    libdmitry
 
 # IDC
 PRODUCT_COPY_FILES += \
