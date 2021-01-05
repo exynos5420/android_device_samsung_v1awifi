@@ -64,10 +64,6 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.universal5420.rc
 
-# Sensors wrapper
-PRODUCT_PACKAGES += \
-    sensors.universal5420
-
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=8m \
