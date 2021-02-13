@@ -16,7 +16,7 @@
 
 # gscalers
 /dev/video23              0660   media      graphics
-/dev/video26              0660   media      graphics
+/dev/video26              0660   mediacodec graphics
 
 /dev/video24              0660   media      graphics
 /dev/video27              0660   media      graphics
