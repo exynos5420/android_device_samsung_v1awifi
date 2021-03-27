@@ -18,6 +18,10 @@ LOCAL_PATH := device/samsung/v1awifi
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# GPS
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps/gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gps.xml
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.target.rc
