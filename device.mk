@@ -26,10 +26,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gps.xml
 
-# Ramdisk
-PRODUCT_PACKAGES += \
-    init.target.rc
-
 
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
